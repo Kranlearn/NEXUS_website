@@ -1,0 +1,456 @@
+:root {
+    --bg-base: #ffffff;
+    --bg-surface: #f9f9fb;
+    --accent-primary: #000000;
+    --accent-secondary: #0066cc; /* Bleu signature Apple Developer / Stripe Hub */
+    --text-main: #1d1d1f;
+    --text-muted: #6e6e73;
+    --border-color: #e5e5ea;
+    --border-hover: #aeaeb2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── HEADER NAVIGATION PREMIUM ── */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 2rem;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.25rem;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav a:hover { color: var(--text-main); }
+
+.btn-connect {
+    background: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    color: #ffffff;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-connect:hover {
+    background: #27272e;
+    border-color: #27272e;
+    transform: translateY(-0.5px);
+}
+
+/* ── HERO SECTION MINIMALISTE ── */
+.hero {
+    padding: 11rem 2rem 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge {
+    background: #f5f5f7;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    display: inline-block;
+    margin-bottom: 1.75rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.75px;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 580px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+}
+
+/* ── DATA VISUALIZATION PREVIEW (CHART FRAME) ── */
+.dashboard-preview {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 0.6rem;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--bg-surface);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* ── PRICING GRIDS ── */
+.pricing {
+    max-width: 1100px;
+    margin: 7rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.75px;
+    margin-bottom: 3.5rem;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 2.75rem 2.5rem;
+    width: 340px;
+    text-align: left;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+}
+
+.card.premium {
+    border-color: var(--accent-secondary);
+    background: linear-gradient(180deg, #ffffff 60%, #f4f9ff 100%);
+    box-shadow: 0 4px 18px rgba(0, 102, 204, 0.03);
+}
+
+.card.premium:hover {
+    box-shadow: 0 12px 30px rgba(0, 102, 204, 0.06);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.85rem;
+    font-weight: 800;
+    margin: 1.25rem 0;
+    letter-spacing: -1.5px;
+}
+
+.price span {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin-bottom: 2rem;
+}
+
+.pay-gateways {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.6rem;
+}
+
+.gateway-btn {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+}
+
+.gateway-btn:hover { 
+    background: var(--bg-surface);
+    border-color: var(--border-hover);
+}
+
+.gateway-btn-repo {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent-primary);
+    background: var(--accent-primary);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.gateway-btn-repo:hover {
+    background: #27272e;
+}
+
+/* ── INTERFACE MODAL SÉCURISÉE ── */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2000;
+}
+
+.modal.active { opacity: 1; pointer-events: auto; }
+
+.modal-content {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 2.75rem 2.5rem;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+}
+
+.modal-content h3 { margin-bottom: 0.4rem; font-size: 1.45rem; font-weight: 700; letter-spacing: -0.5px; }
+
+.form-group { margin-bottom: 1.4rem; }
+
+.form-group label { display: block; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.45rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25px; }
+
+.form-group input {
+    width: 100%; padding: 0.75rem; background: #ffffff; border: 1px solid var(--border-color);
+    border-radius: 6px; color: var(--text-main);
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus { border-color: var(--accent-secondary); outline: none; }
+
+.close-modal { 
+    position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; color: var(--text-muted); transition: color 0.2s;
+}
+.close-modal:hover { color: var(--text-main); }
+
+/* ── FOOTER CORPORATE ── */
+footer {
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    padding: 4rem 2rem;
+    margin-top: 8rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ── SECTION FEATURES STYLE GOOGLE ── */
+.features-grid-section {
+    max-width: 1100px;
+    margin: 8rem auto 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+}
+
+.google-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    text-align: left;
+}
+
+/* Alterne l'ordre des blocs (Image à gauche, texte à droite) */
+.grid-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.grid-text-block {
+    flex: 1;
+}
+
+.grid-text-block h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.grid-text-block p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* CONTENEUR IMAGE AVEC HOVER DYNAMIQUE */
+.grid-image-block {
+    flex: 1;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.grid-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* L'overlay sombre qui apparaît au survol */
+.image-hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: opacity 0.3s ease;
+}
+
+/* 🪐 ANIMATION AU SURVOL (Changement visuel pour Insta) */
+.grid-image-block:hover img {
+    transform: scale(1.04); /* Léger zoom fluide */
+}
+
+.grid-image-block:hover .image-hover-overlay {
+    opacity: 1; /* Fait apparaître le texte et le flou */
+}
+
+/* RESPONSIVE DESIGN (Si tu regardes sur ton téléphone) */
+@media (max-width: 768px) {
+    .grid-row, .grid-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .grid-image-block {
+        width: 100%;
+        height: 240px;
+    }
+}
+

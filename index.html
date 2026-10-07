@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS DUALITY // Multimodal Data Engine</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-secondary); margin-right: 5px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                NEXUS<span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#video">Visuals</a></li>
+                    <li><a href="#pricing">Licences</a></li>
+                </ul>
+            </nav>
+            <button class="btn-connect" onclick="toggleModal(true)">
+                <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; display: inline-block; vertical-align: middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg>
+                Accès Membre
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="badge">ENVIRONMENT COMPLIANT // R&D CORE</div>
+            <h1>Automated Multi-Modal<br>Analytics Pipeline</h1>
+            <p>Traitement asynchrone des métadonnées cryptographiques et biométriques. Conçu pour l'intégrité de vos architectures logicielles.</p>
+            
+            <!-- ZONE DU GRAPHIQUE BIOMÉTRIQUE -->
+            <div class="dashboard-preview" id="video">
+                <div class="video-container" style="padding: 2rem; background: #ffffff; min-height: 350px;">
+                    <canvas id="biometricChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION FEATURES GRID (STYLE GOOGLE) -->
+        <section class="features-grid-section" id="architecture">
+            <div class="badge">SYSTEM BLUEPRINTS</div>
+            <h2>Une infrastructure analytique de pointe</h2>
+            <p class="section-subtitle">Découvrez les modules qui composent l'écosystème Nexus Duality</p>
+
+            <div class="google-grid">
+                <!-- Bloc 01 : Traitement du Signal -->
+                <div class="grid-row">
+                    <div class="grid-text-block">
+                        <h3>01 // Traitement du Signal</h3>
+                        <p>Analyse spectrale en temps réel via la transformation de Fourier (FFT). Isolat acoustique des fréquences de friction nasale pour une catégorisation comportementale précise et automatisée.</p>
+                    </div>
+                    <div class="grid-image-block">
+                        <img src="images/Site_main.jpg" alt="Analyse de données">
+                        <div class="image-hover-overlay">Voir la télémétrie</div>
+                    </div>
+                </div>
+
+                <!-- Bloc 02 : Vision par Ordinateur -->
+                <div class="grid-row reverse">
+                    <div class="grid-image-block">
+                        <img src="images/site_2.jpg" alt="Cybersécurité">
+                        <div class="image-hover-overlay">Inspecter le nœud</div>
+                    </div>
+                    <div class="grid-text-block">
+                        <h3>02 // Vision par Ordinateur</h3>
+                        <p>Cartographie matricielle différentielle par flux optique. Tracking asymétrique des micro-expressions du visage pour extraire des preuves tangibles de l'état affectif de l'utilisateur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING & PAYMENT GATEWAYS -->
+        <section class="pricing" id="pricing">
+            <div class="badge">SECURE ACQUISITION</div>
+            <h2>Modèles de Déploiement</h2>
+            <div class="pricing-grid">
+                <div class="card">
+                    <h3>Core Engine</h3>
+                    <div class="price">0 € <span>/ open-source</span></div>
+                    <p>Filtres d'artefacts immuables et packaging de conformité.</p>
+                    <button class="gateway-btn-repo" onclick="window.open('https://github.com', '_blank')">Fork Repository</button>
+                </div>
+                <div class="card premium">
+                    <h3>Enterprise Node</h3>
+                    <div class="price">49 € <span>/ mois</span></div>
+                    <p>Grappes d'agents redondants et streaming de télémétrie FFT.</p>
+                    <div class="pay-gateways">
+                        <button class="gateway-btn" onclick="alert('Liaison Stripe Initialisée')">Stripe</button>
+                        <button class="gateway-btn" onclick="alert('Liaison PayPal Initialisée')">PayPal</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ACCÈS MEMBRE (MODAL SÉCURISÉE) -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="close-modal" onclick="toggleModal(false)">
+                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <h3>Cryptographic Login</h3>
+            <form onsubmit="event.preventDefault(); alert('Authentification simulée réussie !'); toggleModal(false);">
+                <div class="form-group">
+                    <label>Node Identity (Email)</label>
+                    <input type="email" required placeholder="nom@supdevinci.fr">
+                </div>
+                <div class="form-group">
+                    <label>Access Key</label>
+                    <input type="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-connect" style="width:100%; padding:0.75rem;">Déverrouiller</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER NAV -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo">
+                <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-secondary); margin-right: 5px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                NEXUS<span></span>
+            </div>
+            <p>&copy; 2026 Developed by Chris Silvina (Kranlearn).</p>
+        </div>
+    </footer>
+
+    <!-- CHARGEMENT DES SCRIPTS -->
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
